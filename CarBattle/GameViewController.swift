@@ -18,7 +18,9 @@ class GameViewController: UIViewController {
     
     var ballNode:SCNNode!
     var carNode:SCNNode!
+    var enemyNode:SCNNode!
     var selfieStickNode:SCNNode!
+    var socket = WebSocketController()
     
     var motion = MotionHelper()
     var motionForce = SCNVector3(0, 0, 0)
@@ -48,6 +50,8 @@ class GameViewController: UIViewController {
     
     func setupNodes() {
         ballNode = scene.rootNode.childNode(withName: "ball", recursively: true)!
+        enemyNode = scene.rootNode.childNode(withName: "enemy", recursively: true)!
+        socket.attachEnemy(enemyNode)
         ballNode.physicsBody?.contactTestBitMask = CollidingWithBall
         selfieStickNode = scene.rootNode.childNode(withName: "selfieStick", recursively: true)!
         carNode = scene.rootNode.childNode(withName: "car", recursively: true)!
@@ -105,6 +109,7 @@ class GameViewController: UIViewController {
     
     var directionAngle: CGFloat = 0.0 {
         didSet {
+            socket.sendDirection(directionAngle)
             carNode.runAction(
                 SCNAction.rotateTo(x: 0.0, y: directionAngle, z: 0.0, duration: 0.5, usesShortestUnitArc:true))
         }
@@ -115,6 +120,7 @@ class GameViewController: UIViewController {
 extension GameViewController : SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         let ball = ballNode.presentation
+        socket.sendPosition(ball.position)
         carNode.position = ball.position
         
         let ballPosition = SCNVector3(x: ball.position.x, y: ball.position.y + 5, z: ball.position.z)

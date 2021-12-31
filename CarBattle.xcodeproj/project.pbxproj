@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3552090C277E1D6E008CA2D0 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 3552090B277E1D6E008CA2D0 /* SocketIO */; };
+		3552090E277E2366008CA2D0 /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552090D277E2366008CA2D0 /* WebSocketController.swift */; };
+		35520910277E50C1008CA2D0 /* WebSocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552090F277E50C1008CA2D0 /* WebSocketTypes.swift */; };
 		3594E5A2277CBADD006D7A27 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594E5A1277CBADD006D7A27 /* Overlay.swift */; };
 		3594E5A4277CBB7A006D7A27 /* ControlOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594E5A3277CBB7A006D7A27 /* ControlOverlay.swift */; };
 		3594E5A6277CBBD8006D7A27 /* PadOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594E5A5277CBBD8006D7A27 /* PadOverlay.swift */; };
@@ -24,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3552090D277E2366008CA2D0 /* WebSocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
+		3552090F277E50C1008CA2D0 /* WebSocketTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketTypes.swift; sourceTree = "<group>"; };
 		3594E5A1277CBADD006D7A27 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		3594E5A3277CBB7A006D7A27 /* ControlOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlOverlay.swift; sourceTree = "<group>"; };
 		3594E5A5277CBBD8006D7A27 /* PadOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadOverlay.swift; sourceTree = "<group>"; };
@@ -32,7 +37,7 @@
 		523669C620A071550099E10C /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		5250A4EE209CD21000AB04AA /* MotionHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionHelper.swift; sourceTree = "<group>"; };
 		5250A4EF209CD21000AB04AA /* VectorOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorOperations.swift; sourceTree = "<group>"; };
-		52BA7CD02091CBB100ECCC12 /* HitTheTree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HitTheTree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BA7CD02091CBB100ECCC12 /* CarBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BA7CD32091CBB100ECCC12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BA7CD72091CBB100ECCC12 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		52BA7CDA2091CBB100ECCC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3552090C277E1D6E008CA2D0 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,8 +81,7 @@
 		52BA7CC72091CBB100ECCC12 = {
 			isa = PBXGroup;
 			children = (
-				3594E5A5277CBBD8006D7A27 /* PadOverlay.swift */,
-				52BA7CD22091CBB100ECCC12 /* HitTheTree */,
+				52BA7CD22091CBB100ECCC12 /* CarBattle */,
 				52BA7CD12091CBB100ECCC12 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,14 +89,16 @@
 		52BA7CD12091CBB100ECCC12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52BA7CD02091CBB100ECCC12 /* HitTheTree.app */,
+				52BA7CD02091CBB100ECCC12 /* CarBattle.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		52BA7CD22091CBB100ECCC12 /* HitTheTree */ = {
+		52BA7CD22091CBB100ECCC12 /* CarBattle */ = {
 			isa = PBXGroup;
 			children = (
+				3552090F277E50C1008CA2D0 /* WebSocketTypes.swift */,
+				3594E5A5277CBBD8006D7A27 /* PadOverlay.swift */,
 				3594E5A3277CBB7A006D7A27 /* ControlOverlay.swift */,
 				3594E5A1277CBADD006D7A27 /* Overlay.swift */,
 				5250A4F2209CD21400AB04AA /* Helper */,
@@ -103,16 +110,17 @@
 				52BA7CDC2091CBB200ECCC12 /* Assets.xcassets */,
 				52BA7CDE2091CBB200ECCC12 /* LaunchScreen.storyboard */,
 				52BA7CE12091CBB200ECCC12 /* Info.plist */,
+				3552090D277E2366008CA2D0 /* WebSocketController.swift */,
 			);
-			path = HitTheTree;
+			path = CarBattle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		52BA7CCF2091CBB100ECCC12 /* HitTheTree */ = {
+		52BA7CCF2091CBB100ECCC12 /* CarBattle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52BA7CE42091CBB200ECCC12 /* Build configuration list for PBXNativeTarget "HitTheTree" */;
+			buildConfigurationList = 52BA7CE42091CBB200ECCC12 /* Build configuration list for PBXNativeTarget "CarBattle" */;
 			buildPhases = (
 				52BA7CCC2091CBB100ECCC12 /* Sources */,
 				52BA7CCD2091CBB100ECCC12 /* Frameworks */,
@@ -122,9 +130,12 @@
 			);
 			dependencies = (
 			);
-			name = HitTheTree;
+			name = CarBattle;
+			packageProductDependencies = (
+				3552090B277E1D6E008CA2D0 /* SocketIO */,
+			);
 			productName = HitTheTree;
-			productReference = 52BA7CD02091CBB100ECCC12 /* HitTheTree.app */;
+			productReference = 52BA7CD02091CBB100ECCC12 /* CarBattle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +154,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 52BA7CCB2091CBB100ECCC12 /* Build configuration list for PBXProject "HitTheTree" */;
+			buildConfigurationList = 52BA7CCB2091CBB100ECCC12 /* Build configuration list for PBXProject "CarBattle" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -152,11 +163,14 @@
 				Base,
 			);
 			mainGroup = 52BA7CC72091CBB100ECCC12;
+			packageReferences = (
+				3552090A277E1D6E008CA2D0 /* XCRemoteSwiftPackageReference "socket" */,
+			);
 			productRefGroup = 52BA7CD12091CBB100ECCC12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52BA7CCF2091CBB100ECCC12 /* HitTheTree */,
+				52BA7CCF2091CBB100ECCC12 /* CarBattle */,
 			);
 		};
 /* End PBXProject section */
@@ -187,9 +201,11 @@
 				52BA7CD82091CBB100ECCC12 /* GameViewController.swift in Sources */,
 				3594E5A4277CBB7A006D7A27 /* ControlOverlay.swift in Sources */,
 				3594E5A2277CBADD006D7A27 /* Overlay.swift in Sources */,
+				3552090E277E2366008CA2D0 /* WebSocketController.swift in Sources */,
 				52BA7CD42091CBB100ECCC12 /* AppDelegate.swift in Sources */,
 				5250A4F0209CD21000AB04AA /* MotionHelper.swift in Sources */,
 				3594E5A6277CBBD8006D7A27 /* PadOverlay.swift in Sources */,
+				35520910277E50C1008CA2D0 /* WebSocketTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,14 +354,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LJP7QK7UE;
 				INFOPLIST_FILE = HitTheTree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brianadvent.HitTheTree;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "car-battle.car-battle.car-battle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -356,21 +374,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LJP7QK7UE;
 				INFOPLIST_FILE = HitTheTree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.brianadvent.HitTheTree;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "car-battle.car-battle.car-battle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52BA7CCB2091CBB100ECCC12 /* Build configuration list for PBXProject "HitTheTree" */ = {
+		52BA7CCB2091CBB100ECCC12 /* Build configuration list for PBXProject "CarBattle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52BA7CE22091CBB200ECCC12 /* Debug */,
@@ -379,7 +399,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52BA7CE42091CBB200ECCC12 /* Build configuration list for PBXNativeTarget "HitTheTree" */ = {
+		52BA7CE42091CBB200ECCC12 /* Build configuration list for PBXNativeTarget "CarBattle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52BA7CE52091CBB200ECCC12 /* Debug */,
@@ -389,6 +409,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3552090A277E1D6E008CA2D0 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3552090B277E1D6E008CA2D0 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3552090A277E1D6E008CA2D0 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52BA7CC82091CBB100ECCC12 /* Project object */;
 }

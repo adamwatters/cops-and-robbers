@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HitTheTree.xcodeproj">
+      location = "self:/Users/adamwatters/CopsAndRobbers/CarBattle.xcodeproj">
    </FileRef>
 </Workspace>
