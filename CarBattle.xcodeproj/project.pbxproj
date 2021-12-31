@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3552090C277E1D6E008CA2D0 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 3552090B277E1D6E008CA2D0 /* SocketIO */; };
 		3552090E277E2366008CA2D0 /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552090D277E2366008CA2D0 /* WebSocketController.swift */; };
 		35520910277E50C1008CA2D0 /* WebSocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3552090F277E50C1008CA2D0 /* WebSocketTypes.swift */; };
+		357697AB277E915000286F8A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 357697AA277E915000286F8A /* Info.plist */; };
 		3594E5A2277CBADD006D7A27 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594E5A1277CBADD006D7A27 /* Overlay.swift */; };
 		3594E5A4277CBB7A006D7A27 /* ControlOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594E5A3277CBB7A006D7A27 /* ControlOverlay.swift */; };
 		3594E5A6277CBBD8006D7A27 /* PadOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3594E5A5277CBBD8006D7A27 /* PadOverlay.swift */; };
@@ -29,6 +29,7 @@
 /* Begin PBXFileReference section */
 		3552090D277E2366008CA2D0 /* WebSocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
 		3552090F277E50C1008CA2D0 /* WebSocketTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketTypes.swift; sourceTree = "<group>"; };
+		357697AA277E915000286F8A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3594E5A1277CBADD006D7A27 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		3594E5A3277CBB7A006D7A27 /* ControlOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlOverlay.swift; sourceTree = "<group>"; };
 		3594E5A5277CBBD8006D7A27 /* PadOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadOverlay.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		52BA7CDA2091CBB100ECCC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52BA7CDC2091CBB200ECCC12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52BA7CDF2091CBB200ECCC12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		52BA7CE12091CBB200ECCC12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BA7CE72091CCDA00ECCC12 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3552090C277E1D6E008CA2D0 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +80,7 @@
 		52BA7CC72091CBB100ECCC12 = {
 			isa = PBXGroup;
 			children = (
+				357697AA277E915000286F8A /* Info.plist */,
 				52BA7CD22091CBB100ECCC12 /* CarBattle */,
 				52BA7CD12091CBB100ECCC12 /* Products */,
 			);
@@ -109,7 +109,6 @@
 				52BA7CD92091CBB100ECCC12 /* Main.storyboard */,
 				52BA7CDC2091CBB200ECCC12 /* Assets.xcassets */,
 				52BA7CDE2091CBB200ECCC12 /* LaunchScreen.storyboard */,
-				52BA7CE12091CBB200ECCC12 /* Info.plist */,
 				3552090D277E2366008CA2D0 /* WebSocketController.swift */,
 			);
 			path = CarBattle;
@@ -132,7 +131,6 @@
 			);
 			name = CarBattle;
 			packageProductDependencies = (
-				3552090B277E1D6E008CA2D0 /* SocketIO */,
 			);
 			productName = HitTheTree;
 			productReference = 52BA7CD02091CBB100ECCC12 /* CarBattle.app */;
@@ -164,7 +162,6 @@
 			);
 			mainGroup = 52BA7CC72091CBB100ECCC12;
 			packageReferences = (
-				3552090A277E1D6E008CA2D0 /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = 52BA7CD12091CBB100ECCC12 /* Products */;
 			projectDirPath = "";
@@ -180,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				357697AB277E915000286F8A /* Info.plist in Resources */,
 				523669C820A071550099E10C /* jump.wav in Resources */,
 				52BA7CE02091CBB200ECCC12 /* LaunchScreen.storyboard in Resources */,
 				52BA7CE82091CCDA00ECCC12 /* art.scnassets in Resources */,
@@ -353,7 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LJP7QK7UE;
-				INFOPLIST_FILE = HitTheTree/Info.plist;
+				INFOPLIST_FILE = CarBattle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -373,7 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LJP7QK7UE;
-				INFOPLIST_FILE = HitTheTree/Info.plist;
+				INFOPLIST_FILE = CarBattle/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,25 +407,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3552090A277E1D6E008CA2D0 /* XCRemoteSwiftPackageReference "socket" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3552090B277E1D6E008CA2D0 /* SocketIO */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3552090A277E1D6E008CA2D0 /* XCRemoteSwiftPackageReference "socket" */;
-			productName = SocketIO;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 52BA7CC82091CBB100ECCC12 /* Project object */;
 }
