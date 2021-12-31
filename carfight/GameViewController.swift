@@ -37,7 +37,7 @@ class GameViewController: UIViewController {
         sceneView.overlaySKScene = overlay
         
         //sceneView.allowsCameraControl = true
-        scene = SCNScene(named: "art.scnassets/MainScene.scn")
+        scene = SCNScene(named: "art.scnassets/PAScene.scn")
         sceneView.scene = scene
         
         scene.physicsWorld.contactDelegate = self
