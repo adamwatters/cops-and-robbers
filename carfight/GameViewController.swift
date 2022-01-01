@@ -46,11 +46,12 @@ class GameViewController: UIViewController {
     
     func setupNodes() {
         ballNode = scene.rootNode.childNode(withName: "ball", recursively: true)!
-        enemyNode = scene.rootNode.childNode(withName: "car1", recursively: true)!
+        enemyNode = scene.rootNode.childNode(withName: "car2", recursively: true)!
         socket.attachEnemy(enemyNode)
         ballNode.physicsBody?.contactTestBitMask = CollidingWithBall
         selfieStickNode = scene.rootNode.childNode(withName: "selfieStick", recursively: true)!
-        carNode = scene.rootNode.childNode(withName: "car2", recursively: true)!
+        carNode = scene.rootNode.childNode(withName: "car1", recursively: true)!
+        carNode.physicsBody = nil
     }
     
     override var shouldAutorotate: Bool {
