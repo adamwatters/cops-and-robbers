@@ -10,7 +10,7 @@ enum QnAMessageType: String, Codable {
 
 struct Player: Codable {
     let id: UUID
-    let handle: String
+    let playerName: String
     let position: Int
 }
 
@@ -25,12 +25,12 @@ struct QnAHandshake: Codable {
 
 struct JoinGame: Codable {
     var type: QnAMessageType = .joinGame
-    let handle: String
+    let playerName: String
+    let id: UUID
 }
 
 struct PlayersUpdate: Codable {
     var type: QnAMessageType
-    let handle: String
     var players: [Player]
 }
 

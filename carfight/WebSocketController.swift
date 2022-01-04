@@ -10,9 +10,13 @@ struct AlertWrapper: Identifiable {
     let alert: Alert
 }
 
+protocol WebSocketDelegate: NSObjectProtocol {
+    func handlePlayersUpdate(_ players: [Player])
+}
+
 final class WebSocketController: ObservableObject {
     @Published var alertWrapper: AlertWrapper?
-
+    weak var delegate: WebSocketDelegate?
     private var id: UUID!
     private let session: URLSession
     var socket: URLSessionWebSocketTask!
@@ -26,9 +30,24 @@ final class WebSocketController: ObservableObject {
     }
 
     func connect() {
-    self.socket = session.webSocketTask(with: URL(string: "wss://cops-and-robbers-server.herokuapp.com")!)
-    self.listen()
-    self.socket.resume()
+        self.socket = session.webSocketTask(with: URL(string: WEB_SOCKET_URL)!)
+        self.listen()
+        self.socket.resume()
+    }
+    
+    func joinGame(playerName: String) {
+        guard let id = self.id else { return }
+        let joinMessage = JoinGame(playerName: playerName, id: id)
+        do {
+          let data = try encoder.encode(joinMessage)
+          self.socket.send(.data(data)) { (err) in
+            if err != nil {
+              print(err.debugDescription)
+            }
+          }
+        } catch {
+          print(error)
+        }
     }
     
     func attachEnemy(_ enemy: SCNNode) {
@@ -38,7 +57,7 @@ final class WebSocketController: ObservableObject {
     func sendDirection(_ direction: CGFloat) {
         guard let id = self.id else { return }
         // 1
-            let directionMessage = DirectionUpdate(id: id, direction: direction)
+        let directionMessage = DirectionUpdate(id: id, direction: direction)
         do {
           // 2
           let data = try encoder.encode(directionMessage)
@@ -73,27 +92,26 @@ final class WebSocketController: ObservableObject {
   
     func handle(_ data: Data) {
         do {
-          // 1
-          let sinData = try decoder.decode(QnAMessageSinData.self, from: data)
-          // 2
-          switch sinData.type {
-          case .handshake:
-            // 3
-            print("Shook the hand")
-            let message = try decoder.decode(QnAHandshake.self, from: data)
-            self.id = message.id
-          // 4
-          case .enemyPosition:
-            print("will handle enemy position")
-            try self.handleEnemyPosition(data)
-          case .enemyDirection:
-            print("will handle enemy position")
-            try self.handleEnemyDirection(data)
-          default:
-            break
-          }
+            let sinData = try decoder.decode(QnAMessageSinData.self, from: data)
+            switch sinData.type {
+                case .handshake:
+                    print("Shook the hand")
+                    let message = try decoder.decode(QnAHandshake.self, from: data)
+                    self.id = message.id
+                case .playersUpdate:
+                    print("Recieved Players Update")
+                    try self.handlePlayersUpdate(data)
+                case .enemyPosition:
+                    print("will handle enemy position")
+                    try self.handleEnemyPosition(data)
+                case .enemyDirection:
+                    print("will handle enemy position")
+                    try self.handleEnemyDirection(data)
+                default:
+                    break
+            }
         } catch {
-          print(error)
+            print(error)
         }
     }
   
@@ -122,9 +140,13 @@ final class WebSocketController: ObservableObject {
           self.listen()
         }
     }
+    
+    func handlePlayersUpdate(_ data: Data) throws {
+        let response = try decoder.decode(PlayersUpdate.self, from: data)
+        self.delegate?.handlePlayersUpdate(response.players)
+    }
   
     func handleEnemyPosition(_ data: Data) throws {
-        print("handle enemy position")
         let response = try decoder.decode(PositionUpdate.self, from: data)
         DispatchQueue.main.async {
             self.enemy?.position = SCNVector3(x: response.x, y: response.y, z: response.z)
@@ -132,7 +154,6 @@ final class WebSocketController: ObservableObject {
     }
     
     func handleEnemyDirection(_ data: Data) throws {
-        print("handle enemy position")
         let response = try decoder.decode(DirectionUpdate.self, from: data)
         DispatchQueue.main.async {
             self.enemy?.runAction(

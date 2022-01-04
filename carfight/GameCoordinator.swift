@@ -9,22 +9,7 @@ import SwiftUI
 import SpriteKit
 import SceneKit
 
-struct Game: View {
-    let scene: SCNScene = SCNScene(named: "art.scnassets/arenas/Stadium.scn")!
-    let overlay: SKScene = SKScene()
-    let gameCoordinator: GameCoordinator
-    init() {
-        gameCoordinator = GameCoordinator(scene: scene, overlay: overlay)
-    }
-    var body: some View {
-        ZStack {
-            SceneView(scene: scene, delegate: gameCoordinator)
-            SpriteView(scene: overlay, options: [.allowsTransparency])
-        }.ignoresSafeArea()
-    }
-}
-
-class GameCoordinator: NSObject  {
+class GameCoordinator: NSObject, ObservableObject {
     let CollidingWithBall = 2
     var direction = float2()
     var scene:SCNScene!
@@ -35,12 +20,37 @@ class GameCoordinator: NSObject  {
     var selfieStickNode:SCNNode!
     var socket = WebSocketController()
     var motionForce = SCNVector3(0, 0, 0)
+    @Published var players: [Player] = []
     init(scene: SCNScene, overlay: SKScene){
         super.init()
         self.scene = scene
         self.overlay = overlay
         self.setupScene()
         self.setupOverlay()
+    }
+    
+    func setupScene() {
+        ballNode = scene.rootNode.childNode(withName: "ball", recursively: true)!
+        enemyNode = scene.rootNode.childNode(withName: "car2", recursively: true)!
+        socket.attachEnemy(enemyNode)
+        ballNode.physicsBody?.contactTestBitMask = CollidingWithBall
+        selfieStickNode = scene.rootNode.childNode(withName: "selfieStick", recursively: true)!
+        carNode = scene.rootNode.childNode(withName: "car1", recursively: true)!
+        carNode.physicsBody = nil
+    }
+    
+    func setupOverlay() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+        overlay.backgroundColor = .clear
+        overlay.anchorPoint = CGPoint(x: 0, y: 0)
+        overlay.size = CGSize(width: screenSize.width, height: screenSize.height)
+        overlay.scaleMode = .aspectFill
+            
+        let pad = PadOverlay()
+        pad.delegate = self
+        pad.position = CGPoint(x: screenSize.width - pad.size.width - 20, y: 30)
+        overlay.addChild(pad)
     }
     
     var carDirection: vector_float2 {
@@ -64,29 +74,6 @@ class GameCoordinator: NSObject  {
             carNode.runAction(
                 SCNAction.rotateTo(x: 0.0, y: directionAngle, z: 0.0, duration: 0.5, usesShortestUnitArc:true))
         }
-    }
-    
-    func setupScene() {
-        ballNode = scene.rootNode.childNode(withName: "ball", recursively: true)!
-        enemyNode = scene.rootNode.childNode(withName: "car2", recursively: true)!
-        socket.attachEnemy(enemyNode)
-        ballNode.physicsBody?.contactTestBitMask = CollidingWithBall
-        selfieStickNode = scene.rootNode.childNode(withName: "selfieStick", recursively: true)!
-        carNode = scene.rootNode.childNode(withName: "car1", recursively: true)!
-        carNode.physicsBody = nil
-    }
-    func setupOverlay() {
-        let screenSize: CGRect = UIScreen.main.bounds
-        
-        overlay.backgroundColor = .clear
-        overlay.anchorPoint = CGPoint(x: 0, y: 0)
-        overlay.size = CGSize(width: screenSize.width, height: screenSize.height)
-        overlay.scaleMode = .aspectFill
-            
-        let pad = PadOverlay()
-        pad.delegate = self
-        pad.position = CGPoint(x: screenSize.width - pad.size.width - 20, y: 30)
-        overlay.addChild(pad)
     }
 }
 
@@ -128,5 +115,19 @@ extension GameCoordinator : PadOverlayDelegate {
 
     func padOverlayVirtualStickInteractionDidEnd(_ padNode: PadOverlay) {
         // nothing for now
+    }
+}
+
+extension GameCoordinator : NameInputDelegate {
+    func handleSubmit(_ name: String) {
+        socket.joinGame(playerName: name)
+    }
+}
+
+extension GameCoordinator : WebSocketDelegate {
+    func handlePlayersUpdate(_ players: [Player]) {
+        DispatchQueue.main.async {
+            self.players = players
+        }
     }
 }

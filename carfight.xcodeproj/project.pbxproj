@@ -10,14 +10,14 @@
 		35351C48277E9283007220BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C47277E9283007220BE /* AppDelegate.swift */; };
 		35351C5C277E92A3007220BE /* WebSocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C5B277E92A3007220BE /* WebSocketTypes.swift */; };
 		35351C5E277E92C0007220BE /* PadOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C5D277E92C0007220BE /* PadOverlay.swift */; };
-		35351C60277E92DA007220BE /* ControlOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C5F277E92DA007220BE /* ControlOverlay.swift */; };
-		35351C62277E92EF007220BE /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C61277E92EF007220BE /* Overlay.swift */; };
 		35351C64277E930A007220BE /* VectorOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C63277E930A007220BE /* VectorOperations.swift */; };
 		35351C66277E9352007220BE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 35351C65277E9352007220BE /* art.scnassets */; };
 		35351C6A277E9394007220BE /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C69277E9394007220BE /* WebSocketController.swift */; };
+		359DA6C227841FD3002DDFFD /* NameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359DA6C127841FD3002DDFFD /* NameInput.swift */; };
+		359DA6C42784352C002DDFFD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359DA6C32784352C002DDFFD /* GameView.swift */; };
 		35C189F22783EF9F00DB005E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C189F12783EF9F00DB005E /* Assets.xcassets */; };
 		35D67DB72782BAF60020AFDB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB62782BAF60020AFDB /* App.swift */; };
-		35D67DB92782BBB80020AFDB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB82782BBB80020AFDB /* Game.swift */; };
+		35D67DB92782BBB80020AFDB /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB82782BBB80020AFDB /* GameCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,14 +26,14 @@
 		35351C55277E9284007220BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35351C5B277E92A3007220BE /* WebSocketTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketTypes.swift; sourceTree = "<group>"; };
 		35351C5D277E92C0007220BE /* PadOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadOverlay.swift; sourceTree = "<group>"; };
-		35351C5F277E92DA007220BE /* ControlOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlOverlay.swift; sourceTree = "<group>"; };
-		35351C61277E92EF007220BE /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		35351C63277E930A007220BE /* VectorOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorOperations.swift; sourceTree = "<group>"; };
 		35351C65277E9352007220BE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		35351C69277E9394007220BE /* WebSocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
+		359DA6C127841FD3002DDFFD /* NameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInput.swift; sourceTree = "<group>"; };
+		359DA6C32784352C002DDFFD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		35C189F12783EF9F00DB005E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D67DB62782BAF60020AFDB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		35D67DB82782BBB80020AFDB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		35D67DB82782BBB80020AFDB /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,15 +67,15 @@
 			isa = PBXGroup;
 			children = (
 				35C189F12783EF9F00DB005E /* Assets.xcassets */,
-				35D67DB82782BBB80020AFDB /* Game.swift */,
+				359DA6C127841FD3002DDFFD /* NameInput.swift */,
+				359DA6C32784352C002DDFFD /* GameView.swift */,
+				35D67DB82782BBB80020AFDB /* GameCoordinator.swift */,
 				35D67DB62782BAF60020AFDB /* App.swift */,
 				35351C69277E9394007220BE /* WebSocketController.swift */,
 				35351C5B277E92A3007220BE /* WebSocketTypes.swift */,
 				35351C47277E9283007220BE /* AppDelegate.swift */,
 				35351C55277E9284007220BE /* Info.plist */,
 				35351C5D277E92C0007220BE /* PadOverlay.swift */,
-				35351C5F277E92DA007220BE /* ControlOverlay.swift */,
-				35351C61277E92EF007220BE /* Overlay.swift */,
 				35351C63277E930A007220BE /* VectorOperations.swift */,
 				35351C65277E9352007220BE /* art.scnassets */,
 			);
@@ -155,11 +155,11 @@
 				35351C6A277E9394007220BE /* WebSocketController.swift in Sources */,
 				35D67DB72782BAF60020AFDB /* App.swift in Sources */,
 				35351C5E277E92C0007220BE /* PadOverlay.swift in Sources */,
-				35351C60277E92DA007220BE /* ControlOverlay.swift in Sources */,
 				35351C64277E930A007220BE /* VectorOperations.swift in Sources */,
-				35D67DB92782BBB80020AFDB /* Game.swift in Sources */,
+				359DA6C42784352C002DDFFD /* GameView.swift in Sources */,
+				35D67DB92782BBB80020AFDB /* GameCoordinator.swift in Sources */,
+				359DA6C227841FD3002DDFFD /* NameInput.swift in Sources */,
 				35351C48277E9283007220BE /* AppDelegate.swift in Sources */,
-				35351C62277E92EF007220BE /* Overlay.swift in Sources */,
 				35351C5C277E92A3007220BE /* WebSocketTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
