@@ -5,7 +5,6 @@ class ControlOverlay: SKNode {
 
     init(frame: CGRect) {
         super.init()
-        
         rightPad.position = CGPoint(x: CGFloat(frame.size.width - 20 - rightPad.size.width), y: CGFloat(40))
         addChild(rightPad)
     }

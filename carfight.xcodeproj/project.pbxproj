@@ -8,27 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		35351C48277E9283007220BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C47277E9283007220BE /* AppDelegate.swift */; };
-		35351C4A277E9283007220BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C49277E9283007220BE /* SceneDelegate.swift */; };
-		35351C4C277E9283007220BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C4B277E9283007220BE /* ViewController.swift */; };
-		35351C54277E9284007220BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35351C52277E9284007220BE /* LaunchScreen.storyboard */; };
 		35351C5C277E92A3007220BE /* WebSocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C5B277E92A3007220BE /* WebSocketTypes.swift */; };
 		35351C5E277E92C0007220BE /* PadOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C5D277E92C0007220BE /* PadOverlay.swift */; };
 		35351C60277E92DA007220BE /* ControlOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C5F277E92DA007220BE /* ControlOverlay.swift */; };
 		35351C62277E92EF007220BE /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C61277E92EF007220BE /* Overlay.swift */; };
 		35351C64277E930A007220BE /* VectorOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C63277E930A007220BE /* VectorOperations.swift */; };
 		35351C66277E9352007220BE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 35351C65277E9352007220BE /* art.scnassets */; };
-		35351C68277E937A007220BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35351C67277E937A007220BE /* Assets.xcassets */; };
 		35351C6A277E9394007220BE /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C69277E9394007220BE /* WebSocketController.swift */; };
 		35351C6C277E93BC007220BE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C6B277E93BC007220BE /* GameViewController.swift */; };
-		35351C6E277E9532007220BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35351C6D277E9532007220BE /* Main.storyboard */; };
+		35C189F22783EF9F00DB005E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C189F12783EF9F00DB005E /* Assets.xcassets */; };
+		35D67DB72782BAF60020AFDB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB62782BAF60020AFDB /* App.swift */; };
+		35D67DB92782BBB80020AFDB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB82782BBB80020AFDB /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		35351C44277E9283007220BE /* carfight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carfight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35351C47277E9283007220BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35351C49277E9283007220BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35351C4B277E9283007220BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		35351C53277E9284007220BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		35351C55277E9284007220BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35351C5B277E92A3007220BE /* WebSocketTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketTypes.swift; sourceTree = "<group>"; };
 		35351C5D277E92C0007220BE /* PadOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadOverlay.swift; sourceTree = "<group>"; };
@@ -36,10 +31,11 @@
 		35351C61277E92EF007220BE /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		35351C63277E930A007220BE /* VectorOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorOperations.swift; sourceTree = "<group>"; };
 		35351C65277E9352007220BE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		35351C67277E937A007220BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35351C69277E9394007220BE /* WebSocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
 		35351C6B277E93BC007220BE /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		35351C6D277E9532007220BE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		35C189F12783EF9F00DB005E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		35D67DB62782BAF60020AFDB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		35D67DB82782BBB80020AFDB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +68,13 @@
 		35351C46277E9283007220BE /* carfight */ = {
 			isa = PBXGroup;
 			children = (
-				35351C6D277E9532007220BE /* Main.storyboard */,
+				35C189F12783EF9F00DB005E /* Assets.xcassets */,
+				35D67DB82782BBB80020AFDB /* Game.swift */,
+				35D67DB62782BAF60020AFDB /* App.swift */,
 				35351C6B277E93BC007220BE /* GameViewController.swift */,
 				35351C69277E9394007220BE /* WebSocketController.swift */,
-				35351C67277E937A007220BE /* Assets.xcassets */,
 				35351C5B277E92A3007220BE /* WebSocketTypes.swift */,
 				35351C47277E9283007220BE /* AppDelegate.swift */,
-				35351C49277E9283007220BE /* SceneDelegate.swift */,
-				35351C4B277E9283007220BE /* ViewController.swift */,
-				35351C52277E9284007220BE /* LaunchScreen.storyboard */,
 				35351C55277E9284007220BE /* Info.plist */,
 				35351C5D277E92C0007220BE /* PadOverlay.swift */,
 				35351C5F277E92DA007220BE /* ControlOverlay.swift */,
@@ -149,10 +143,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35351C54277E9284007220BE /* LaunchScreen.storyboard in Resources */,
+				35C189F22783EF9F00DB005E /* Assets.xcassets in Resources */,
 				35351C66277E9352007220BE /* art.scnassets in Resources */,
-				35351C68277E937A007220BE /* Assets.xcassets in Resources */,
-				35351C6E277E9532007220BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,29 +157,18 @@
 			files = (
 				35351C6C277E93BC007220BE /* GameViewController.swift in Sources */,
 				35351C6A277E9394007220BE /* WebSocketController.swift in Sources */,
+				35D67DB72782BAF60020AFDB /* App.swift in Sources */,
 				35351C5E277E92C0007220BE /* PadOverlay.swift in Sources */,
-				35351C4C277E9283007220BE /* ViewController.swift in Sources */,
 				35351C60277E92DA007220BE /* ControlOverlay.swift in Sources */,
 				35351C64277E930A007220BE /* VectorOperations.swift in Sources */,
+				35D67DB92782BBB80020AFDB /* Game.swift in Sources */,
 				35351C48277E9283007220BE /* AppDelegate.swift in Sources */,
 				35351C62277E92EF007220BE /* Overlay.swift in Sources */,
-				35351C4A277E9283007220BE /* SceneDelegate.swift in Sources */,
 				35351C5C277E92A3007220BE /* WebSocketTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		35351C52277E9284007220BE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35351C53277E9284007220BE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		35351C56277E9284007220BE /* Debug */ = {
@@ -319,10 +300,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Car Battle Royal";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,10 +329,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Car Battle Royal";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
