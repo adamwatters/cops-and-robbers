@@ -2,8 +2,8 @@ import Foundation
 import SwiftUI
 import SceneKit
 
-let WEB_SOCKET_URL = "ws://192.168.4.60:3000"
-//let WEB_SOCKET_URL = "wss://cops-and-robbers-server.herokuapp.com"
+//let WEB_SOCKET_URL = "ws://192.168.4.60:3000"
+let WEB_SOCKET_URL = "wss://cops-and-robbers-server.herokuapp.com"
 
 struct AlertWrapper: Identifiable {
     let id = UUID()

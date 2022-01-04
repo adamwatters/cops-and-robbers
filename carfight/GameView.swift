@@ -19,17 +19,27 @@ struct GameView: View {
     }
     var body: some View {
         ZStack {
-            SceneView(scene: scene, delegate: gameCoordinator)
-            SpriteView(scene: overlay, options: [.allowsTransparency])
+            SceneView(scene: scene, delegate: gameCoordinator).ignoresSafeArea()
+            SpriteView(scene: overlay, options: [.allowsTransparency]).ignoresSafeArea()
             ZStack {
                 if gameCoordinator.players.count > 0 {
                     VStack {
-                        Text(gameCoordinator.players[0].playerName)
-                    }.background(Color.black)
+                        // todo: make this a list of players in the game, with position
+                        // make it so more than 2 can play
+                        HStack {
+                            Spacer()
+                            VStack {
+                                ForEach(gameCoordinator.players, id: \.self.id) { player in
+                                    Text(player.playerName)
+                                }
+                            }
+                        }
+                        Spacer()
+                    }.padding()
                 } else {
                     NameInput(delegate: gameCoordinator)
                 }
             }
-        }.ignoresSafeArea()
+        }
     }
 }
