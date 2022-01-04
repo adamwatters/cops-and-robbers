@@ -42,6 +42,30 @@ class GameCoordinator: NSObject  {
         self.setupScene()
         self.setupOverlay()
     }
+    
+    var carDirection: vector_float2 {
+        get {
+            return direction
+        }
+        set {
+            var newDirection = newValue
+            let l = simd_length(newDirection)
+            if l > 1.0 {
+                newDirection *= 1 / l
+            }
+            direction = newDirection
+            directionAngle = CGFloat(atan2f(direction.x, direction.y))
+        }
+    }
+
+    var directionAngle: CGFloat = 0.0 {
+        didSet {
+            socket.sendDirection(directionAngle)
+            carNode.runAction(
+                SCNAction.rotateTo(x: 0.0, y: directionAngle, z: 0.0, duration: 0.5, usesShortestUnitArc:true))
+        }
+    }
+    
     func setupScene() {
         ballNode = scene.rootNode.childNode(withName: "ball", recursively: true)!
         enemyNode = scene.rootNode.childNode(withName: "car2", recursively: true)!
@@ -52,22 +76,17 @@ class GameCoordinator: NSObject  {
         carNode.physicsBody = nil
     }
     func setupOverlay() {
+        let screenSize: CGRect = UIScreen.main.bounds
+        
         overlay.backgroundColor = .clear
+        overlay.anchorPoint = CGPoint(x: 0, y: 0)
+        overlay.size = CGSize(width: screenSize.width, height: screenSize.height)
+        overlay.scaleMode = .aspectFill
+            
         let pad = PadOverlay()
         pad.delegate = self
-        pad.position = CGPoint(x: 20, y: 20)
-        overlay.anchorPoint = CGPoint(x: 0, y: 1)
-        overlay.size = CGSize(width: 400, height: 400)
-        overlay.scaleMode = .aspectFill
-//        let image = UIImage(named: "threezy")
-//        let texture = SKTexture(image: image!)
-//        let watermark = SKSpriteNode(texture: texture)
-//        let watermarkWidth = 100
-//        let watermarkHeight = watermarkWidth / 2
-//        watermark.size = CGSize(width: watermarkWidth, height: watermarkHeight)
-//        watermark.position = CGPoint(x: (watermarkWidth / 2) + (watermarkWidth / 8), y: (watermarkHeight / -2) - (watermarkWidth / 8))
-//        overlay.addChild(watermark)
-//        overlay.addChild(pad)
+        pad.position = CGPoint(x: screenSize.width - pad.size.width - 20, y: 30)
+        overlay.addChild(pad)
     }
 }
 
@@ -103,7 +122,7 @@ extension GameCoordinator : PadOverlayDelegate {
     }
 
     func padOverlayVirtualStickInteractionDidChange(_ padNode: PadOverlay) {
-        self.direction = float2(Float(padNode.stickPosition.x), -Float(padNode.stickPosition.y))
+        self.carDirection = float2(Float(padNode.stickPosition.x), -Float(padNode.stickPosition.y))
         self.motionForce = SCNVector3(x: Float(padNode.stickPosition.x) * 0.05, y:0, z: Float(padNode.stickPosition.y) * -0.05)
     }
 

@@ -15,7 +15,6 @@
 		35351C64277E930A007220BE /* VectorOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C63277E930A007220BE /* VectorOperations.swift */; };
 		35351C66277E9352007220BE /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 35351C65277E9352007220BE /* art.scnassets */; };
 		35351C6A277E9394007220BE /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C69277E9394007220BE /* WebSocketController.swift */; };
-		35351C6C277E93BC007220BE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35351C6B277E93BC007220BE /* GameViewController.swift */; };
 		35C189F22783EF9F00DB005E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C189F12783EF9F00DB005E /* Assets.xcassets */; };
 		35D67DB72782BAF60020AFDB /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB62782BAF60020AFDB /* App.swift */; };
 		35D67DB92782BBB80020AFDB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D67DB82782BBB80020AFDB /* Game.swift */; };
@@ -32,7 +31,6 @@
 		35351C63277E930A007220BE /* VectorOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VectorOperations.swift; sourceTree = "<group>"; };
 		35351C65277E9352007220BE /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		35351C69277E9394007220BE /* WebSocketController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
-		35351C6B277E93BC007220BE /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		35C189F12783EF9F00DB005E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35D67DB62782BAF60020AFDB /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		35D67DB82782BBB80020AFDB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				35C189F12783EF9F00DB005E /* Assets.xcassets */,
 				35D67DB82782BBB80020AFDB /* Game.swift */,
 				35D67DB62782BAF60020AFDB /* App.swift */,
-				35351C6B277E93BC007220BE /* GameViewController.swift */,
 				35351C69277E9394007220BE /* WebSocketController.swift */,
 				35351C5B277E92A3007220BE /* WebSocketTypes.swift */,
 				35351C47277E9283007220BE /* AppDelegate.swift */,
@@ -155,7 +152,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35351C6C277E93BC007220BE /* GameViewController.swift in Sources */,
 				35351C6A277E9394007220BE /* WebSocketController.swift in Sources */,
 				35D67DB72782BAF60020AFDB /* App.swift in Sources */,
 				35351C5E277E92C0007220BE /* PadOverlay.swift in Sources */,
